@@ -1,0 +1,16 @@
+img {
+	height: 300px;
+	border-radius: 20px;
+	margin: 15px;
+}
+
+#ghibliResults {
+	display:flex;
+	justify-content:center;
+	flex-wrap:wrap;
+}
+
+h1, form, footer {
+	text-align: center;
+	text-decoration: none;
+}
