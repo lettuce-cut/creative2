@@ -1,14 +1,15 @@
+backgroundPic = ["mountains.jpeg", "hill.jpeg", "plain.jpeg", "marsh.jpeg", "forest.jpeg", "city.jpg", "river.jpeg", "ocean.jpeg"];
 
-ButtonAction("moButton");
-ButtonAction("hButton");
-ButtonAction("pButton");
-ButtonAction("maButton");
-ButtonAction("fButton");
-ButtonAction("cButton");
-ButtonAction("rButton");
-ButtonAction("oButton");
+ButtonAction("moButton", 0);
+ButtonAction("hButton", 1);
+ButtonAction("pButton", 2);
+ButtonAction("maButton", 3);
+ButtonAction("fButton", 4);
+ButtonAction("cButton", 5);
+ButtonAction("rButton", 6);
+ButtonAction("oButton", 7);
 
-function ButtonAction(whichOne) {
+function ButtonAction(whichOne, picNum) {
 	document.getElementById(whichOne).addEventListener("click", function(event) {
 		event.preventDefault();
 		const value = document.getElementById(whichOne).value;
@@ -26,6 +27,7 @@ function ButtonAction(whichOne) {
 				results = "";
 				movies = [];
 				count = 0;
+				document.body.style.backgroundImage = "url(" + backgroundPic[picNum] + ")";
 				for (let i = 0; i < Object.keys(json).length; i++) {
 					if (value === json[i].terrain){
 						console.log(json[i].terrain);
